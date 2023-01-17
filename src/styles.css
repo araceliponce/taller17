@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.fixed-bg {
+  position: absolute;
+  inset: 0;
+  background-color: white;
+}
+
+/* solo para tener el reto y la act en un mismo sitio */

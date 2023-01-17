@@ -1,0 +1,37 @@
+<section class="bg-success d-flex">
+  <span class="nav-link p-3 fw-bold">CERTUS</span>
+  <nav class="container d-flex px-0">
+    <ul class="d-flex">
+      <li>
+        <a class="nav-link p-3" routerLink="" aria-current="page">Home</a>
+      </li>
+      <li>
+        <a class="nav-link p-3" routerLink="login">Login</a>
+      </li>
+      <li>
+        <a class="nav-link p-3" routerLink="vistafull">vista full</a>
+      </li>
+      <!-- <li>
+        <a routerLink="/vistafull/{{ dato }}/vistafiltro">Enviar datos a vistafiltro</a>
+      </li> -->
+    </ul>
+  </nav>
+  <a class="btn btn-alert" href="/act">Ir a la actividad Asincrona</a>
+</section>
+
+<!-- usamos routerlink vacio y con los respectivos paths -->
+
+<style>
+  nav ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .active {
+    background-color: cornflowerblue;
+  }
+</style>

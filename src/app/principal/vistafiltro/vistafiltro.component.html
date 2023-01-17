@@ -1,0 +1,9 @@
+<p>vistafiltro works!</p>
+<!-- <li>
+  <a routerLink="/vistafull/{{ dato }}/vistafiltro">Enviar datos a vistafiltro</a>
+</li> -->
+
+
+<section *ngFor="let item of datos">
+  <p *ngIf="item.Categoria==cat">{{'nombre: '+item.Nombre + ' cat: '+ item.Categoria}}</p>
+</section>
