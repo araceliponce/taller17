@@ -8,27 +8,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VistafiltroComponent {
 
-  // Recibir parametros de otros componentes
-constructor(private rutaActiva: ActivatedRoute){}
+
+constructor(private rutaActiva: ActivatedRoute) {}
 
 // Simular un entorno de datos
 datos = [
-{Nombre: "Juan", Apellido: "Perez", Categoria: 1},
-{Nombre: "Arturo", Apellido: "Perez", Categoria: 1},
-{Nombre: "Maria", Apellido: "Perez", Categoria: 2},
-{Nombre: "Luis", Apellido: "Perez", Categoria: 1},
-{Nombre: "Jorge", Apellido: "Perez", Categoria: 2},
-{Nombre: "Carlos", Apellido: "Perez", Categoria: 1},
-]
+{ Nombre: 'Juan', Correo:'cdd@mail.com', Telefono:'8675434', Asunto:'sg', Mensaje:'hola', Pais: 'pe'},
+{ Nombre: 'Arturo', Correo:'cdd@mail.com', Telefono:'8675434', Asunto:'sg', Mensaje:'hola', Pais: 'pe'},
+{ Nombre: 'Maria', Correo:'cdd@mail.com', Telefono:'8675434', Asunto:'sg', Mensaje:'hola', Pais: 'pe'},
+{ Nombre: 'Luis', Correo:'cdd@mail.com', Telefono:'8675434', Asunto:'sg', Mensaje:'hola', Pais: 'pe'},
+{ Nombre: 'Jorge', Correo:'cdd@mail.com', Telefono:'8675434', Asunto:'sg', Mensaje:'hola', Pais: 'pe'},
+{ Nombre: 'Carlos', Correo:'cdd@mail.com', Telefono:'8675434', Asunto:'sg', Mensaje:'hola', Pais: 'pe'}
+];
 
 // Variable para recibir el parametro enviado desde vistafull
-cat=0;
+cat = this.rutaActiva.snapshot.params['id'];
 
-// Evento ngOnInit -> Cargar pagina
-// Al cargar la pagina se recibira el valor enviado desde vistafull
+filteredData = this.datos.filter((item) => item.Pais === this.cat);
 
-//cat va a ser igual al param :id (: significa parametro)
-ngOnInit(){
-this.cat = this.rutaActiva.snapshot.params['id'];
-}
 }

@@ -1,10 +1,11 @@
 <section class="container mt-5">
 
   <section class="bg-light px-3 py-4 rounded border">
-    <h1 class="text-center">LOGIN</h1>
+    <h1 class="text-center">CONTACT</h1>
+    <!-- nombre, telefono, correo, asunto, mensaje, pais -->
     <form (input)="updateBtn()">
       <label for="inputUser" class="form-label">Email Address</label>
-      <input autofocus type="text" id="inputUser" class="form-control" aria-describedby="UserHelpBlock" [(ngModel)]="nom" name="nom">
+      <input autofocus type="text" id="inputUser" class="form-control" [(ngModel)]="nom" name="nom">
 
       <label for="inputPass" class="form-label">Password</label>
       <input type="password" id="inputPass" class="form-control" aria-describedby="passwordHelpBlock" [(ngModel)]="pass" name="pass">

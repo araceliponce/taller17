@@ -9,5 +9,5 @@ export class VistafullComponent {
 
   //un atributo con un valor determinado
 
-  dato=1; //AQUI DATO
+  dato='pe'; //AQUI DATO
 }

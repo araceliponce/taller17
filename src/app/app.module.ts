@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
@@ -23,7 +24,9 @@ import { PrincipalModule } from './principal/principal.module';
     BrowserModule,
     AppRoutingModule,
     // RouterModule.forRoot(router)
-    PrincipalModule
+    PrincipalModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

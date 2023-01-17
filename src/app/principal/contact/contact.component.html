@@ -1,0 +1,51 @@
+<section class="container-sm my-5 bg-light">
+  <h1 class="text-center">FORMULARIO DE REGISTRO</h1>
+
+  <form [formGroup]="otroRegistroForm" (ngSubmit)="onSubmit()">
+
+    <section class=" form-group m-3">
+      <label class="">Nombre</label>
+      <input placeholder="Nombre *" class="form-control" type="text" formControlName="nombre" [ngClass]="{'is-valid': nombre?.valid, 'is-invalid': (nombre?.dirty || nombre?.touched)&&nombre?.invalid}" />
+
+      <section *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+        <p *ngIf="nombre?.errors?.['required']" class="alert alert-danger">No dejes el nombre vacío</p>
+      </section>
+    </section>
+
+    <section class="form-group m-3">
+      <label class="">Email</label>
+      <input placeholder="Email *" class="form-control" type="email" formControlName="email" [ngClass]="{'is-valid': email?.valid, 'is-invalid': (email?.dirty || email?.touched)&&email?.invalid}" />
+
+    </section>
+
+    <section class="form-group m-3">
+      <label class="">Telefono <small>(9 dígitos)</small> </label>
+      <input placeholder="Teléfono" formControlName="telefono" maxlength="9" class="form-control" type="text" [ngClass]="{'is-valid': telefono?.valid, 'is-invalid': (telefono?.dirty || telefono?.touched)&&telefono?.invalid}" />
+    </section>
+
+    <section class="form-group m-3">
+      <label class="">Asunto</label>
+      <input placeholder="Asunto *" class="form-control" type="text" formControlName="asunto" [ngClass]="{'is-valid': asunto?.valid, 'is-invalid': (asunto?.dirty || asunto?.touched)&&asunto?.invalid}" />
+    </section>
+
+    <section class="form-group m-3">
+      <label class="">Mensaje <small>(máx: 100 caracteres)</small></label>
+      <textarea placeholder="Mensaje" class="form-control" type="text" maxlength="100" formControlName="mensaje" [ngClass]="{'is-valid': mensaje?.valid, 'is-invalid': (mensaje?.dirty || mensaje?.touched)&&mensaje?.invalid}"></textarea>
+      <section *ngIf="mensaje?.invalid && (mensaje?.dirty || mensaje?.touched)">
+        <p *ngIf="mensaje?.errors?.['maxlength']" class="alert alert-danger">El mensaje no puede exceder los 100 caracteres</p>
+      </section>
+    </section>
+
+    <section class="form-group m-3">
+      <select name="pais" id="pais" class="form-control" formControlName="pais">
+        <option value="pe">peru</option>
+        <option value="otro">otro</option>
+      </select>
+    </section>
+    <section class="form-group">
+      <button [disabled]="otroRegistroForm.invalid" type="submit" class="btn btn-primary d-block ms-auto me-auto">
+        Enviar
+      </button>
+    </section>
+  </form>
+</section>

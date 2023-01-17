@@ -1,9 +1,25 @@
-<p>vistafiltro works!</p>
-<!-- <li>
-  <a routerLink="/vistafull/{{ dato }}/vistafiltro">Enviar datos a vistafiltro</a>
-</li> -->
+<p>vistalfiltro works!</p>
+<p>Valor enviado desde componente vistafull: {{ cat }}</p>
 
-
-<section *ngFor="let item of datos">
-  <p *ngIf="item.Categoria==cat">{{'nombre: '+item.Nombre + ' cat: '+ item.Categoria}}</p>
-</section>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Asunto</th>
+      <th scope="col">Mensaje</th>
+      <th scope="col">País</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of filteredData">
+      <td>{{ item.Nombre }}</td>
+      <td>{{ item.Correo }}</td>
+      <td>{{ item.Telefono }}</td>
+      <td>{{ item.Asunto }}</td>
+      <td>{{ item.Mensaje }}</td>
+      <td>{{ item.Pais }}</td>
+    </tr>
+  </tbody>
+</table>
