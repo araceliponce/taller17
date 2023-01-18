@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DataService } from './data.service';
 import { PrincipalModule } from './principal/principal.module';
 
 //AQUI la const router
@@ -24,11 +25,12 @@ import { PrincipalModule } from './principal/principal.module';
     BrowserModule,
     AppRoutingModule,
     // RouterModule.forRoot(router)
-    PrincipalModule,
-    ReactiveFormsModule,
-    FormsModule
+    PrincipalModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+}

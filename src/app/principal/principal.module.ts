@@ -6,7 +6,6 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLinkActive } from '@angular/router';
-import { ActModule } from '../act/act.module';
 import { VistafiltroComponent } from './vistafiltro/vistafiltro.component';
 import { VistafullComponent } from './vistafull/vistafull.component';
 import { ContactComponent } from './contact/contact.component';

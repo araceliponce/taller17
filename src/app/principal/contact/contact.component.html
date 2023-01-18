@@ -1,51 +1,80 @@
-<section class="container-sm my-5 bg-light">
-  <h1 class="text-center">FORMULARIO DE REGISTRO</h1>
+<section class="container-sm my-5 ">
+  <h2 class="text-center">Contacto</h2>
 
-  <form [formGroup]="otroRegistroForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-12 col-md-8 mx-auto">
+      <form class="border p-1 mt-1 bg-light rounded">
 
-    <section class=" form-group m-3">
-      <label class="">Nombre</label>
-      <input placeholder="Nombre *" class="form-control" type="text" formControlName="nombre" [ngClass]="{'is-valid': nombre?.valid, 'is-invalid': (nombre?.dirty || nombre?.touched)&&nombre?.invalid}" />
+        <section class="form-group m-3">
+          <label class="col-sm-2 col-form-label" for="nombre">Nombre:</label>
+          <input class="form-control" type="text" id="nombre" [(ngModel)]="nombre" name="nombre">
+        </section>
 
-      <section *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
-        <p *ngIf="nombre?.errors?.['required']" class="alert alert-danger">No dejes el nombre vacío</p>
+        <section class="form-group m-3">
+          <label class="col-sm-2 col-form-label" for="correo">Correo:</label>
+          <input class="form-control " type="email" id="correo" [(ngModel)]="correo" name="correo">
+        </section>
+        <section class="form-group m-3">
+          <label class="col-sm-2 col-form-label" for="telefono">Teléfono:</label>
+          <input class="form-control" type="text" id="telefono" [(ngModel)]="telefono" name="telefono">
+        </section>
+        <section class="form-group m-3">
+          <label class="col-sm-2 col-form-label" for="asunto">Asunto:</label>
+          <input class="form-control" type="text" id="asunto" [(ngModel)]="asunto" name="asunto">
+        </section>
+        <section class="form-group m-3">
+          <label class="col-sm-2 col-form-label" for="mensaje">Mensaje:</label>
+          <textarea class="form-control" id="mensaje" [(ngModel)]="mensaje" name="mensaje"></textarea>
+        </section>
+        <section class="form-group m-3">
+          <label class="col-sm-2 col-form-label" for="pais">País:</label>
+          <select class="form-control" type="text" id="pais" [(ngModel)]="pais" name="pais">
+            <option value="peru">peru</option>
+            <option value="chile">chile</option>
+            <option value="uruguay">uruguay</option>
+            <option value="argentina">argentina</option>
+            <option value="brasil">brasil</option>
+          </select>
+        </section>
+
+        <section class="form-group text-center m-3">
+          <button type="button" class="btn btn-outline-dark" (click)="insertarDatos()">Guardar</button>
+        </section>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-10 mx-auto">
+      <section class="form-group m-0 mt-3 text-center">
+        <section class="d-block">
+        </section>
+        <section class="d-block">
+          <!-- <table class="table table-striped border rounded  ">
+
+            <thead>
+              <tr>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Correo</th>
+                <th class="text-center">Teléfono</th>
+                <th class="text-center">Asunto</th>
+                <th class="text-center">Mensaje</th>
+                <th class="text-center">País</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let estudiante of estudiante; let i = index">
+                <td class="text-center">{{estudiante.nombre}}</td>
+                <td class="text-center">{{estudiante.correo}}</td>
+                <td class="text-center">{{estudiante.telefono}}</td>
+                <td class="text-center">{{estudiante.asunto}}</td>
+                <td class="text-center">{{estudiante.mensaje}}</td>
+                <td class="text-center">{{estudiante.pais}}</td>
+              </tr>
+            </tbody>
+          </table> -->
+        </section>
       </section>
-    </section>
-
-    <section class="form-group m-3">
-      <label class="">Email</label>
-      <input placeholder="Email *" class="form-control" type="email" formControlName="email" [ngClass]="{'is-valid': email?.valid, 'is-invalid': (email?.dirty || email?.touched)&&email?.invalid}" />
-
-    </section>
-
-    <section class="form-group m-3">
-      <label class="">Telefono <small>(9 dígitos)</small> </label>
-      <input placeholder="Teléfono" formControlName="telefono" maxlength="9" class="form-control" type="text" [ngClass]="{'is-valid': telefono?.valid, 'is-invalid': (telefono?.dirty || telefono?.touched)&&telefono?.invalid}" />
-    </section>
-
-    <section class="form-group m-3">
-      <label class="">Asunto</label>
-      <input placeholder="Asunto *" class="form-control" type="text" formControlName="asunto" [ngClass]="{'is-valid': asunto?.valid, 'is-invalid': (asunto?.dirty || asunto?.touched)&&asunto?.invalid}" />
-    </section>
-
-    <section class="form-group m-3">
-      <label class="">Mensaje <small>(máx: 100 caracteres)</small></label>
-      <textarea placeholder="Mensaje" class="form-control" type="text" maxlength="100" formControlName="mensaje" [ngClass]="{'is-valid': mensaje?.valid, 'is-invalid': (mensaje?.dirty || mensaje?.touched)&&mensaje?.invalid}"></textarea>
-      <section *ngIf="mensaje?.invalid && (mensaje?.dirty || mensaje?.touched)">
-        <p *ngIf="mensaje?.errors?.['maxlength']" class="alert alert-danger">El mensaje no puede exceder los 100 caracteres</p>
-      </section>
-    </section>
-
-    <section class="form-group m-3">
-      <select name="pais" id="pais" class="form-control" formControlName="pais">
-        <option value="pe">peru</option>
-        <option value="otro">otro</option>
-      </select>
-    </section>
-    <section class="form-group">
-      <button [disabled]="otroRegistroForm.invalid" type="submit" class="btn btn-primary d-block ms-auto me-auto">
-        Enviar
-      </button>
-    </section>
-  </form>
-</section>
+    </div>
+  </div>

@@ -1,25 +1,34 @@
-<p>vistalfiltro works!</p>
-<p>Valor enviado desde componente vistafull: {{ cat }}</p>
+<section style="background-color: lightblue;">
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Asunto</th>
-      <th scope="col">Mensaje</th>
-      <th scope="col">País</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of filteredData">
-      <td>{{ item.Nombre }}</td>
-      <td>{{ item.Correo }}</td>
-      <td>{{ item.Telefono }}</td>
-      <td>{{ item.Asunto }}</td>
-      <td>{{ item.Mensaje }}</td>
-      <td>{{ item.Pais }}</td>
-    </tr>
-  </tbody>
-</table>
+  <p>vistalfiltro works!</p>
+  <p>Valor enviado desde componente vistafull: {{ cat }}</p>
+
+
+  <!--  -->
+
+  <table class="table table-striped border rounded  ">
+
+    <thead>
+      <tr>
+        <th class="text-center">Nombre</th>
+        <th class="text-center">Correo</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Asunto</th>
+        <th class="text-center">Mensaje</th>
+        <th class="text-center">País</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataArray; let i = index">
+        <td>{{item.Nombre}}</td>
+        <td>{{item.Correo}}</td>
+        <td>{{item.Telefono}}</td>
+        <td>{{item.Asunto}}</td>
+        <td>{{item.Mensaje}}</td>
+        <td>{{item.Pais}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</section>

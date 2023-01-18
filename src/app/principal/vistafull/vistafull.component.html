@@ -1,8 +1,7 @@
 <p>vistafull works!</p>
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus rerum enim nostrum labore provident exercitationem, eius nesciunt veritatis ad voluptas. Recusandae tempore nulla molestiae itaque, vel cumque! Dolor, tenetur!</p>
 <li>
-  <a routerLink="/vistafull/{{ dato }}/vistafiltro">Enviar datos a vistafiltro</a>
+  <!-- <a routerLink="/vistafull/{{ dato }}/vistafiltro">Enviar datos a vistafiltro</a> -->
 </li>
 
-<!-- intento -->
-<app-vistafiltro></app-vistafiltro>
+<li *ngFor="let item of arreglo"><a routerLink="/vistafull/{{ item }}/vistafiltro"> {{item}}</a></li>
