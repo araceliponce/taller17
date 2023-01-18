@@ -14,11 +14,11 @@ export class DataService {
       Pais: 'peru',
     },
     {
-      Nombre: 'chile',
-      Correo: 'cdd@mail.com',
-      Telefono: '8675434',
-      Asunto: 'sg',
-      Mensaje: 'hola',
+      Nombre: 'Persona de chile',
+      Correo: 'abc@mail.com',
+      Telefono: '0000000',
+      Asunto: 'sin asunto',
+      Mensaje: 'adios',
       Pais: 'chile',
     },
   ];

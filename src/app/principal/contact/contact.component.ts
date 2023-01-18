@@ -16,7 +16,7 @@ export class ContactComponent {
   
 
 
-datos = [];
+// datos = [];
 estudiante: any[] = [];
 nombre: string = "";
 correo: string = "";
